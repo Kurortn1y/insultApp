@@ -9,6 +9,15 @@ import UIKit
 
 final class StartViewController: UIViewController {
     
-    @IBAction func getInsult() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard  let insultVC = segue.destination as? InsultViewController else { return }
+        insultVC.fetchInsult()
     }
+    override func viewDidLoad() {
+        view.backgroundColor = .cyan
+    }
+    @IBAction func getInsultButtonTapped() {
+        
+    }
+    
 }
