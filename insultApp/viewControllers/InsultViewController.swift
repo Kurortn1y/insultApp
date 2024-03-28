@@ -24,7 +24,7 @@ class InsultViewController: UIViewController {
 
     func fetchInsult() {
         
-        var request = URLRequest(url: insultURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+        let request = URLRequest(url: insultURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
         
         networkManager.fetch(type: Insult.self, request: request) {[unowned self] result in
             switch result {
